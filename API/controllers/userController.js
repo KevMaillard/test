@@ -2,9 +2,9 @@ const UserModel = require("../domain/schemas/userSchema");
 
 module.exports = {
   createUser(req, res) {//On crée un fonction create, on instancie la requete et la reponse
-    User.findOne({ email: req.body.email }).then(result => {//on lui dit de chercher dans les Users si l'email n'existe deja pas dans la bdd
+    UserModel.findOne({ email: req.body.email }).then(result => {//on lui dit de chercher dans les Users si l'email n'existe deja pas dans la bdd
         if (result == null) {//si il ne trouve pas il crée le user
-            const newUser = new User({
+            const newUser = new UserModel({
                 name: req.body.name,
                 firstName: req.body.firstName,
                 email: req.body.email
