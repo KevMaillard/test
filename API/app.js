@@ -11,4 +11,4 @@ app.use(express.urlencoded({extended: true}));
 app.use(userRoutes);
 
 
-
+module.exports = app

@@ -3,9 +3,10 @@ const mongoose = require('mongoose');
 const schema = mongoose.Schema;
 
 const UserSchema = new schema({
-    name:{type:String},
-    firstname:{type:String},
-    email:{type:String},
+    name:{type:String, required: true},
+    firstname:{type:String, required: true},
+    email:{type:String, unique:true, required: true},
+    password:{type:String, required: true}
 })
 
 const UserModel = mongoose.model('users', UserSchema)
